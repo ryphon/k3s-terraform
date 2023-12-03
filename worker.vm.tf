@@ -1,5 +1,5 @@
 resource "proxmox_virtual_environment_vm" "workers" {
-  for_each    = local.workers
+  for_each    = var.workers
   name        = each.key
   description = "Managed by Terraform"
   tags        = ["terraform", "ubuntu", "worker"]

@@ -4,10 +4,6 @@ terraform {
             source = "bpg/proxmox"
             #version = "~> 0.2.1"
         }
-        k0s = {
-            source = "alessiodionisi/k0s"
-            #version = "~> 0.2.1"
-        }
         helm = {
             source = "hashicorp/helm"
             #version = "~> 2.11.0"

@@ -31,3 +31,11 @@ variable "proxmox_password" {}
 variable "proxmox_ip" {
     default = "10.0.0.254"
 }
+
+variable "workers" {
+    type = map
+}
+
+variable "controllers" {
+    type = map
+}

@@ -1,5 +1,5 @@
 resource "proxmox_virtual_environment_file" "workers" {
-  for_each = local.workers
+  for_each = var.workers
   content_type = "snippets"
   datastore_id = "snippets"
   node_name    = var.proxmox_host

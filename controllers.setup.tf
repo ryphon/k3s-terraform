@@ -1,5 +1,5 @@
 resource "proxmox_virtual_environment_file" "controllers" {
-  for_each = local.controllers
+  for_each = var.controllers
   content_type = "snippets"
   datastore_id = "snippets"
   node_name    = var.proxmox_host

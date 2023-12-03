@@ -1,5 +1,5 @@
 resource "proxmox_virtual_environment_vm" "controllers" {
-  for_each    = local.controllers
+  for_each    = var.controllers
   name        = each.key
   description = "Managed by Terraform"
   tags        = ["terraform", "ubuntu", "controller"]
