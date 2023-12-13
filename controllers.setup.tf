@@ -26,6 +26,7 @@ write_files:
       set -e
       apt update && apt upgrade -y
       apt install linux-modules-$(uname -r) linux-modules-extra-$(uname -r)
+      apt install linux-generic -y
       echo fs.inotify.max_user_watches=1048576 | tee -a /etc/sysctl.conf
       echo fs.inotify.max_user_instances=512000 | tee -a /etc/sysctl.conf
       echo vm.max_map_count=524288 | tee -a /etc/sysctl.conf
