@@ -11,7 +11,7 @@ variable "k3s_token" {
 }
 
 variable "k3s_url" {
-    default = "k8s.lab"
+    default = "k8s2.lab"
 }
 
 variable "k3s_channel" {
@@ -19,7 +19,7 @@ variable "k3s_channel" {
 }
 
 variable "vip" {
-    default = "10.2.0.1"
+    default = "10.3.0.1"
 }
 
 variable "proxmox_username" {

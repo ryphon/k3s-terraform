@@ -48,6 +48,9 @@ write_files:
       disable:
         - traefik
         - servicelb
+      no-flannel: "true"
+      flannel-backend: none
+      disable-network-policy: "true"
   - path: /opt/tokenfile
     permissions: 0744
     owner: root
@@ -58,6 +61,7 @@ runcmd:
   - reboot now
 EOF
 
+# - bash /root/setup.sh
     file_name = "controller.${each.key}.cloud-config.yaml"
   }
 }
