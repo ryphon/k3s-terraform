@@ -53,7 +53,7 @@ resource "proxmox_virtual_environment_vm" "controllers" {
   }
 
   clone {
-    vm_id = 9000
+    vm_id = 9001
     full = true
     retries = 3
   }
