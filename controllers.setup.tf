@@ -22,7 +22,7 @@ runcmd:
   - reboot now
 write_files:
   - path: /root/setup.sh
-    permissions: 0744
+    permissions: "0744"
     owner: root
     content: |
       #!/usr/bin/env bash
@@ -37,7 +37,7 @@ write_files:
       sysctl -p
       curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=server INSTALL_K3S_CHANNEL=${var.k3s_channel} sh -
   - path: /etc/rancher/k3s/config.yaml
-    permissions: 0744
+    permissions: "0744"
     owner: root
     content: |
       token-file: /opt/tokenfile
@@ -55,7 +55,7 @@ write_files:
       flannel-backend: none
       disable-network-policy: true
   - path: /opt/tokenfile
-    permissions: 0744
+    permissions: "0744"
     owner: root
     content: |
       ${trimspace(var.k3s_token)}
