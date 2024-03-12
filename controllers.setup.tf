@@ -17,6 +17,9 @@ users:
   - default
 chpasswd:
     expire: false
+runcmd:
+  - bash /root/setup.sh
+  - reboot now
 write_files:
   - path: /root/setup.sh
     permissions: 0744
@@ -48,17 +51,14 @@ write_files:
       disable:
         - traefik
         - servicelb
-      no-flannel: "true"
-      flannel-backend: "none"
-      disable-network-policy: "true"
+      no-flannel: true
+      flannel-backend: none
+      disable-network-policy: true
   - path: /opt/tokenfile
     permissions: 0744
     owner: root
     content: |
       ${trimspace(var.k3s_token)}
-runcmd:
-  - bash /root/setup.sh
-  - reboot now
 EOF
 
 # - bash /root/setup.sh
