@@ -49,7 +49,7 @@ write_files:
         - traefik
         - servicelb
       no-flannel: "true"
-      flannel-backend: none
+      flannel-backend: "none"
       disable-network-policy: "true"
   - path: /opt/tokenfile
     permissions: 0744
