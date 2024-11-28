@@ -1,8 +1,8 @@
 # remove existing image in case last execution did not complete successfully
-IMAGE=lunar-server-cloudimg-amd64.img
+IMAGE=noble-server-cloudimg-amd64.img
 PROXMOX=10.0.0.254
 rm $IMAGE
-wget https://cloud-images.ubuntu.com/lunar/current/$IMAGE
+wget https://cloud-images.ubuntu.com/noble/current/$IMAGE
 sudo virt-customize -a $IMAGE --install qemu-guest-agent
 sudo virt-customize -a $IMAGE --install nfs-common
 sudo virt-customize -a $IMAGE --install wireguard-tools
